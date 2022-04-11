@@ -4,8 +4,8 @@
     <doi_batch_id>$doi_batch_id$</doi_batch_id>
     <timestamp>$timestamp$</timestamp>
     <depositor>
-      <depositor_name>JOSS Admin</depositor_name>
-      <email_address>admin@theoj.org</email_address>
+      <depositor_name>NeuroLibre Admin</depositor_name>
+      <email_address>roboneurolibre@gmail.com</email_address>
     </depositor>
     <registrant>The Open Journal</registrant>
   </head>
@@ -16,7 +16,7 @@
         <abbrev_title>$journal_abbrev_title$</abbrev_title>
         <issn media_type="electronic">$journal_issn$</issn>
         <doi_data>
-          <doi>10.21105/$journal_alias$</doi>
+          <doi>10.55458/$journal_alias$</doi>
           <resource>$journal_url$</resource>
         </doi_data>
       </journal_metadata>
@@ -53,11 +53,23 @@
         </ai:program>
         <rel:program>
           <rel:related_item>
-            <rel:description>Software archive</rel:description>
-            <rel:inter_work_relation relationship-type="references" identifier-type="doi">$archive_doi$</rel:inter_work_relation>
+            <rel:description>Repository archive</rel:description>
+            <rel:inter_work_relation relationship-type="hasPart" identifier-type="doi">$repository_doi$</rel:inter_work_relation>
           </rel:related_item>
           <rel:related_item>
-            <rel:description>GitHub review issue</rel:description>
+            <rel:description>Dataset archive</rel:description>
+            <rel:inter_work_relation relationship-type="hasPart" identifier-type="doi">$dataset_doi$</rel:inter_work_relation>
+          </rel:related_item>
+          <rel:related_item>
+            <rel:description>Book archive</rel:description>
+            <rel:inter_work_relation relationship-type="hasPart" identifier-type="doi">$book_doi$</rel:inter_work_relation>
+          </rel:related_item>
+          <rel:related_item>
+            <rel:description>Container archive</rel:description>
+            <rel:inter_work_relation relationship-type="hasPart" identifier-type="doi">$docker_doi$</rel:inter_work_relation>
+          </rel:related_item>
+          <rel:related_item>
+            <rel:description>GitHub technical screening</rel:description>
             <rel:inter_work_relation relationship-type="hasReview" identifier-type="uri">$review_issue_url$</rel:inter_work_relation>
           </rel:related_item>
         </rel:program>
