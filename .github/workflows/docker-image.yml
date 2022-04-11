@@ -9,7 +9,7 @@ on:
   pull_request:
 
 env:
-  IMAGE_NAME: openjournals/paperdraft
+  IMAGE_NAME: agahkarakuzu/paperdraft
 
 jobs:
   # Build images and store them as tar archive

@@ -4,12 +4,12 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'whedon/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = "whedon"
+  spec.name          = "roboneuro"
   spec.version       = Whedon::VERSION
-  spec.authors       = ["Arfon Smith"]
-  spec.email         = ["arfon.smith@gmail.com"]
-  spec.summary       = "A collection of command-line utilities to manage JOSS submissions."
-  spec.homepage      = "https://github.com/openjournals/whedon"
+  spec.authors       = ["Agah Karakuzu"]
+  spec.email         = ["agahkarakuzu@gmail.com"]
+  spec.summary       = "A collection of command-line utilities to manage NeuroLibre submissions."
+  spec.homepage      = "https://github.com/neurolibre/roboneuro-gem"
   spec.license       = "MIT"
 
   spec.files         = `git ls-files -z`.split("\x0")
