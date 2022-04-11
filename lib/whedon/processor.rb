@@ -12,7 +12,11 @@ module Whedon
     attr_accessor :review_issue_id
     attr_accessor :review_body
     attr_accessor :repository_address
-    attr_accessor :archive_doi
+    attr_accessor :repository_doi
+    attr_accessor :data_doi
+    attr_accessor :book_exec_url
+    attr_accessor :book_doi
+    attr_accessor :docker_doi
     attr_accessor :paper_path
     attr_accessor :xml_path
     attr_accessor :doi_batch_id
@@ -26,7 +30,11 @@ module Whedon
       @review_issue_id = review_issue_id
       @review_body = review_body
       @repository_address = review_body[REPO_REGEX]
-      @archive_doi = review_body[ARCHIVE_REGEX]
+      @repository_doi = review_body[ARCHIVE_REPOSITORY_REGEX]
+      @data_doi = review_body[ARCHIVE_DATA_REGEX]
+      @book_doi = review_body[ARCHIVE_BOOK_REGEX]
+      @docker_doi = review_body[ARCHIVE_DOCKER_REGEX]
+      @book_exec_url = review_body[BOOK_EXEC_REGEX]
       @custom_path = custom_path
       # Probably a much nicer way to do this...
       @current_year = ENV["CURRENT_YEAR"].nil? ? Time.new.year : ENV["CURRENT_YEAR"]

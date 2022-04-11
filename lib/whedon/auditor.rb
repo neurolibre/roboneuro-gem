@@ -32,8 +32,11 @@ module Whedon
     end
 
     def verify_archive
-      archive = review_body[ARCHIVE_REGEX]
-      return "Archive: #{archive}" if archive
+      archive_repository = review_body[ARCHIVE_REPOSITORY_REGEX]
+      archive_data = review_body[ARCHIVE_DATA_REGEX]
+      archive_book = review_body[ARCHIVE_BOOK_REGEX]
+      archive_docker = review_body[ARCHIVE_DOCKER_REGEX]
+      return "Repository: #{archive_repository}\n Data: #{archive_data}\n Book: #{archive_book}\n Docker: #{archive_docker}" if archive_repository && archive_book && archive_data && archive_docker
     end
   end
 end

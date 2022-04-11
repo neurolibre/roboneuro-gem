@@ -32,7 +32,12 @@ module Whedon
   AUTHOR_REGEX = /(?<=\*\*Submitting author:\*\*\s)(\S+)/
   REPO_REGEX = /(?<=\*\*Repository:\*\*.<a\shref=)"(.*?)"/
   VERSION_REGEX = /(?<=\*\*Version:\*\*\s)(\S+)/
-  ARCHIVE_REGEX = /(?<=\*\*Archive:\*\*.<a\shref=)"(.*?)"/
+  ARCHIVE_REPOSITORY_REGEX = /(?<=\*\*Repository archive:\*\*.<a\shref=)"(.*?)"/
+  ARCHIVE_DATA_REGEX = /(?<=\*\*Data archive:\*\*.<a\shref=)"(.*?)"/
+  ARCHIVE_BOOK_REGEX = /(?<=\*\*Book archive:\*\*.<a\shref=)"(.*?)"/
+  ARCHIVE_DOCKER_REGEX = /(?<=\*\*Docker archive:\*\*.<a\shref=)"(.*?)"/
+  BOOK_EXEC_REGEX = /(?<=\*\*Jupyter Book:\*\*.<a\shref=)"(.*?)"/
+
 
   class Paper
     include GitHub
@@ -176,7 +181,10 @@ module Whedon
       %w(title tags languages).each { |var| payload['paper'][var] = self.send(var) }
       payload['paper']['authors'] = authors.collect { |a| a.to_h }
       payload['paper']['doi'] = formatted_doi
-      payload['paper']['archive_doi'] = review_issue_body[ARCHIVE_REGEX].gsub('"', '')
+      payload['paper']['repository_doi'] = review_issue_body[ARCHIVE_REPOSITORY_REGEX].gsub('"', '')
+      payload['paper']['data_doi'] = review_issue_body[ARCHIVE_DATA_REGEX].gsub('"', '')
+      payload['paper']['book_doi'] = review_issue_body[ARCHIVE_BOOK_REGEX].gsub('"', '')
+      payload['paper']['docker_doi'] = review_issue_body[ARCHIVE_DOCKER_REGEX].gsub('"', '')
       payload['paper']['repository_address'] = review_issue_body[REPO_REGEX].gsub('"', '')
       payload['paper']['editor'] = "@#{editor}"
       payload['paper']['reviewers'] = reviewers.collect(&:strip)

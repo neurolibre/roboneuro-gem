@@ -42,7 +42,12 @@ class WhedonCli < Thor
   def prepare(issue_id, custom_path=nil, custom_branch=nil)
     review = Whedon::Review.new(issue_id)
     processor = Whedon::Processor.new(issue_id, review.issue_body, custom_path)
-    processor.archive_doi = 'PENDING'
+    processor.repository_doi = 'PENDING'
+    processor.data_doi = 'PENDING'
+    processor.book_doi = 'PENDING'
+    processor.docker_doi = 'PENDING'
+    processor.book_exec_url = 'PENDING'
+
 
     # Optionally set the path to work in
     path = custom_path ? custom_path : "tmp/#{issue_id}"

@@ -1,3 +1,4 @@
 .env
 tmp
 roboneuro*.gem
+.DS_Store

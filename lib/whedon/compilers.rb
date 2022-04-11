@@ -106,6 +106,7 @@ module Compilers
   def pdf_from_markdown(custom_branch=nil, draft=true, paper_issue=nil, paper_volume=nil, paper_year=nil)
     latex_template_path = "#{Whedon.resources}/#{ENV['JOURNAL_ALIAS']}/latex.template"
     csl_file = "#{Whedon.resources}/#{ENV['JOURNAL_ALIAS']}/apa.csl"
+    book_exec_icon = "#{Whedon.resources}/#{ENV['JOURNAL_ALIAS']}/logo_link.png"
 
     url = "#{ENV['JOURNAL_URL']}/papers/lookup/#{@review_issue_id}"
     response = RestClient.get(url)
@@ -142,7 +143,12 @@ module Compilers
 
     metadata = {
       "repository" => repository_address,
-      "archive_doi" => archive_doi,
+      "repository_doi" => repository_doi,
+      "data_doi" => data_doi,
+      "book_doi" => book_doi,
+      "docker_doi" => docker_doi,
+      "book_exec_url" => book_exec_url,
+      "book_exec_icon" => book_exec_icon,
       "paper_url" => paper.pdf_url,
       "journal_name" => ENV['JOURNAL_NAME'],
       "review_issue_url" => paper.review_issue_url,
@@ -167,7 +173,12 @@ module Compilers
 
     `cd #{paper.directory} && pandoc \
     -V repository="#{repository_address}" \
-    -V archive_doi="#{archive_doi}" \
+    -V repository_doi="#{repository_doi}" \
+    -V data_doi="#{data_doi}" \
+    -V book_doi="#{book_doi}" \
+    -V docker_doi="#{docker_doi}" \
+    -V book_exec_url="#{book_exec_url}" \
+    -V book_exec_icon="#{book_exec_icon}" \
     -V review_issue_url="#{paper.review_issue_url}" \
     -V editor_url="#{editor_url}" \
     -V graphics="true" \
@@ -182,7 +193,7 @@ module Compilers
     if File.exists?("#{paper.directory}/#{paper.filename_doi}.pdf")
       puts "#{paper.directory}/#{paper.filename_doi}.pdf"
     else
-      abort("Looks like we failed to compile the PDF")
+      abort("Looks like we failed to compile the PDF :/")
     end
   end
 
@@ -280,7 +291,11 @@ module Compilers
       "timestamp" => Time.now.strftime('%Y%m%d%H%M%S'),
       "doi_batch_id" => generate_doi_batch_id,
       "formatted_doi" => paper.formatted_doi,
-      "archive_doi" => archive_doi,
+      "repository_doi" => repository_doi,
+      "data_doi" => data_doi,
+      "book_doi" => book_doi,
+      "docker_doi" => docker_doi,
+      "book_exec_url" => book_exec_url,
       "review_issue_url" => paper.review_issue_url,
       "paper_url" => paper.pdf_url,
       "joss_resource_url" => paper.joss_resource_url,

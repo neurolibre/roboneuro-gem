@@ -431,7 +431,7 @@ $endif$
   %\hrule
   \sffamily\small
 
-  \href{{$book_exec_url$}}{\includegraphics[width=\marginparwidth]{$book_exec_icon$}}
+  \href{$book_exec_url$}{\includegraphics[width=\marginparwidth]{$book_exec_icon$}}
 
   \vspace{1mm}
 
