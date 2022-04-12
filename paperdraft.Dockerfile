@@ -1,7 +1,11 @@
 FROM pandoc/latex:2.11.2
 
 # Update tlmgr
-RUN tlmgr update --self
+RUN tlmgr repository add ftp://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2021/tlnet-final \
+    tlmgr repository list \
+    tlmgr repository remove http://mirror.ctan.org/systems/texlive/tlnet \
+    tlmgr option repository ftp://ftp.math.utah.edu/pub/tex/historic/systems/texlive/2021/tlnet-final \
+    tlmgr update --self
 
 # Install additional LaTeX packages
 RUN tlmgr install \
