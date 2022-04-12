@@ -84,7 +84,8 @@ http_interactions:
         =\"_blank\">http://dx.doi.org/10.5281/zenodo.13750</a>r\n**Data archive:** <a href=\"http://dx.doi.org/10.5281/zenodo.13750\" target
         =\"_blank\">http://dx.doi.org/10.5281/zenodo.13750</a>r\n**Book archive:** <a href=\"http://dx.doi.org/10.5281/zenodo.13750\" target
         =\"_blank\">http://dx.doi.org/10.5281/zenodo.13750</a>r\n**Docker archive:** <a href=\"http://dx.doi.org/10.5281/zenodo.13750\" target
-        =\"_blank\">http://dx.doi.org/10.5281/zenodo.13750</a>\r\n\r\n## Status\r\n\r\n[![status](http://joss.theoj.org/papers/6b34fdbf8215c1ecd4941afc8be7a7e6/status.svg)](http://joss.theoj.org/papers/6b34fdbf8215c1ecd4941afc8be7a7e6)\r\n\r\nStatus
+        =\"_blank\">http://dx.doi.org/10.5281/zenodo.13750</a>r\n**Jupyter Book:** <a href=\"https://neurolibre.org\" target
+        =\"_blank\">https://neurolibre.org</a>\r\n\r\n## Status\r\n\r\n[![status](http://joss.theoj.org/papers/6b34fdbf8215c1ecd4941afc8be7a7e6/status.svg)](http://joss.theoj.org/papers/6b34fdbf8215c1ecd4941afc8be7a7e6)\r\n\r\nStatus
         badge code:\r\n\r\n```\r\nHTML: <a href=\"http://joss.theoj.org/papers/6b34fdbf8215c1ecd4941afc8be7a7e6\"><img
         src=\"http://joss.theoj.org/papers/6b34fdbf8215c1ecd4941afc8be7a7e6/status.svg\"></a>\r\nMarkdown:
         [![status](http://joss.theoj.org/papers/6b34fdbf8215c1ecd4941afc8be7a7e6/status.svg)]http://joss.theoj.org/papers/6b34fdbf8215c1ecd4941afc8be7a7e6\r\n```\r\n\r\n##
