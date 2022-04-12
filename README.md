@@ -14,6 +14,8 @@ Hopefully...
 
 [![Build Status](https://github.com/openjournals/whedon/actions/workflows/tests.yml/badge.svg)](https://github.com/openjournals/whedon/actions/workflows/tests.yml)
 
+[![Gem Version](https://badge.fury.io/rb/roboneuro.svg)](https://badge.fury.io/rb/roboneuro)
+
 ## Installation
 
 Depending on how Ruby is installed on your system there might slightly different steps be necessary. Note that Whedon is only tested for reasonably modern versions of Ruby (i.e. > 2.1) [Bundler](http://bundler.io/) is used to install dependencies.
