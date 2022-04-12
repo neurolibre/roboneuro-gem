@@ -85,7 +85,7 @@ describe Whedon do
 
   it "should know how to generate the deposit_payload" do
     VCR.use_cassette('review') do
-      %w{title tags languages authors doi archive_doi repository_address editor reviewers}.each do |attribute|
+      %w{title tags languages authors doi repository_doi data_doi book_doi docker_doi repository_address editor reviewers}.each do |attribute|
         expect(paper_with_harder_names.deposit_payload['paper'][attribute].nil?).to be_falsey
       end
     end
