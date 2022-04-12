@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    roboneuro (0.1.1)
+    roboneuro (0.1.2)
       bibtex-ruby (~> 6.0.0)
       dotenv
       github-linguist (~> 5.3)
