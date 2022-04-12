@@ -17,6 +17,11 @@ describe Whedon::Auditor do
   end
 
   it "knows how to find the archive from the issue body" do
-    expect(subject.verify_archive).to eql("Archive: \"http://dx.doi.org/10.5281/zenodo.13750\"")
+    expect(subject.verify_archive).to eql("Repository archive: \"http://dx.doi.org/10.5281/zenodo.13750\" Data archive: \"http://dx.doi.org/10.5281/zenodo.13750\" Book archive: \"http://dx.doi.org/10.5281/zenodo.13750\" Docker archive: \"http://dx.doi.org/10.5281/zenodo.13750\"")
+  end
+
+  it "knows how to find the Jupyter Book from the issue body" do
+    expect(subject.verify_book).to eql("Jupyter Book: \"https://neurolibre.org\"")
   end
 end
+

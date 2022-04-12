@@ -14,6 +14,7 @@ module Whedon
       puts verify_version
       puts verify_repository
       puts verify_archive
+      puts verify_book
     end
 
     def verify_author
@@ -36,7 +37,12 @@ module Whedon
       archive_data = review_body[ARCHIVE_DATA_REGEX]
       archive_book = review_body[ARCHIVE_BOOK_REGEX]
       archive_docker = review_body[ARCHIVE_DOCKER_REGEX]
-      return "Repository: #{archive_repository}\n Data: #{archive_data}\n Book: #{archive_book}\n Docker: #{archive_docker}" if archive_repository && archive_book && archive_data && archive_docker
+      return "Repository archive: #{archive_repository} Data archive: #{archive_data} Book archive: #{archive_book} Docker archive: #{archive_docker}" if archive_repository && archive_book && archive_data && archive_docker
+    end
+
+    def verify_book
+      book = review_body[BOOK_EXEC_REGEX]
+      return "Jupyter Book: #{book}"
     end
   end
 end

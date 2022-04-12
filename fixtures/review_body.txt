@@ -1,7 +1,11 @@
 **Submitting author:** @zhaozhang (<a href="http://orcid.org/0000-0001-5921-0035">Zhao Zhang</a>)
 **Repository:** <a href="https://github.com/applicationskeleton/Skeleton" target ="_blank">https://github.com/applicationskeleton/Skeleton</a>
 **Version:** v1.2
-**Archive:** <a href="http://dx.doi.org/10.5281/zenodo.13750" target ="_blank">http://dx.doi.org/10.5281/zenodo.13750</a>
+**Jupyter Book:** <a href="https://neurolibre.org" target ="_blank">https://neurolibre.org</a>
+**Repository archive:** <a href="http://dx.doi.org/10.5281/zenodo.13750" target ="_blank">http://dx.doi.org/10.5281/zenodo.13750</a>
+**Data archive:** <a href="http://dx.doi.org/10.5281/zenodo.13750" target ="_blank">http://dx.doi.org/10.5281/zenodo.13750</a>
+**Book archive:** <a href="http://dx.doi.org/10.5281/zenodo.13750" target ="_blank">http://dx.doi.org/10.5281/zenodo.13750</a>
+**Docker archive:** <a href="http://dx.doi.org/10.5281/zenodo.13750" target ="_blank">http://dx.doi.org/10.5281/zenodo.13750</a>
 
 ## Status
 
