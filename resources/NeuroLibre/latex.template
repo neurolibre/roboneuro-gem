@@ -439,11 +439,19 @@ $endif$
 
   \vspace{2mm}
 
-  {\bfseries Jupyter Book}
+    {\bfseries Executable Preprint}
+  \begin{itemize}
+    \setlength\itemsep{0em}
+    \item \href{$book_exec_url$}{\color{red}{Jupyter Book}} \ExternalLink
+  \end{itemize}
+
+  \vspace{2mm}
+
+  {\bfseries Code}
   \begin{itemize}
     \setlength\itemsep{0em}
     \item \href{$review_issue_url$}{\color{red}{Technical Screening}} \ExternalLink
-    \item \href{$repository$}{\color{red}{Source}} \ExternalLink
+    \item \href{$repository$}{\color{red}{Submitted Repository}} \ExternalLink
   \end{itemize}
 
   \vspace{2mm}
@@ -453,7 +461,7 @@ $endif$
     \setlength\itemsep{0em}
     \item \href{$repository_doi$}{\color{red}{Repository}} \ExternalLink
     \item \href{$data_doi$}{\color{red}{Dataset}} \ExternalLink
-    \item \href{$book_doi$}{\color{red}{Built Book}} \ExternalLink
+    \item \href{$book_doi$}{\color{red}{Jupyter Book}} \ExternalLink
     \item \href{$docker_doi$}{\color{red}{Container}} \ExternalLink
   \end{itemize}
 
