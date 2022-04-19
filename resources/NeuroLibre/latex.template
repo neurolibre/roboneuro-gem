@@ -431,15 +431,13 @@ $endif$
   %\hrule
   \sffamily\small
 
-  \href{$book_exec_url$}{\includegraphics[width=\marginparwidth]{$book_exec_icon$}}
-
-  \vspace{1mm}
+  \vspace{-4.5cm}
 
   {\bfseries DOI:} \href{https://doi.org/$formatted_doi$}{\color{red}{$formatted_doi$}}
 
   \vspace{2mm}
 
-    {\bfseries Executable Preprint}
+    {\bfseries Reproducible Preprint}
   \begin{itemize}
     \setlength\itemsep{0em}
     \item \href{$book_exec_url$}{\color{red}{Jupyter Book}} \ExternalLink
@@ -456,7 +454,7 @@ $endif$
 
   \vspace{2mm}
 
-  {\bfseries Zenodo Archives}
+  {\bfseries Archives}
   \begin{itemize}
     \setlength\itemsep{0em}
     \item \href{$repository_doi$}{\color{red}{Repository}} \ExternalLink

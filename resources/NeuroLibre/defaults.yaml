@@ -4,9 +4,9 @@ csl: /usr/local/share/openjournals/NeuroLibre/apa.csl
 variables:
   joss_resource_url: 'N/A'
   journal_abbrev_title: 'NeuroLibre'
-  journal_alias: 'NeuroLibre'
+  journal_alias: 'neurolibre'
   journal_issn: '0000-0000'
-  journal_name: 'NeuroLibre Executable Preprint Server'
+  journal_name: 'NeuroLibre Reproducible Preprint Server'
   journal_url: 'https://neurolibre.org/'
 
 metadata:

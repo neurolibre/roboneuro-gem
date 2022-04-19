@@ -122,7 +122,9 @@ module Whedon
       joss_deposit
 
       puts "p=dat #{@review_issue_id};p.doi='#{paper.formatted_doi}';"\
-           "p.archive_doi=#{archive_doi};p.accepted_at=Time.now;"\
+           "p.repository_doi=#{repository_doi};p.accepted_at=Time.now;"\
+           "p.data_doi=#{data_doi};p.book_doi=#{book_doi};"\
+           "p.docker_doi=#{docker_doi};p.book_exec_url=#{book_exec_url};"\
            "p.citation_string='#{citation_string}';"\
            "p.authors='#{paper.authors_string}';p.title='#{paper.title}';"
     end
@@ -136,7 +138,11 @@ module Whedon
                   :id => paper.review_issue_id,
                   :metadata => Base64.encode64(paper.deposit_payload.to_json),
                   :doi => paper.formatted_doi,
-                  :archive_doi => archive_doi,
+                  :repository_doi => repository_doi,
+                  :data_doi => data_doi,
+                  :book_doi => book_doi,
+                  :docker_doi => docker_doi,
+                  :book_exec_url => book_exec_url,
                   :citation_string => citation_string,
                   :title => paper.plain_title,
                   :secret => ENV['WHEDON_SECRET']
