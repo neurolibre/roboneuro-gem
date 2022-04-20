@@ -118,7 +118,7 @@ module Whedon
     end
 
     def deposit
-      crossref_deposit
+      #crossref_deposit
       joss_deposit
 
       puts "p=dat #{@review_issue_id};p.doi='#{paper.formatted_doi}';"\
@@ -133,7 +133,8 @@ module Whedon
       puts "Depositing with JOSS..."
       request = RestClient::Request.new(
                 :method => :post,
-                :url => "#{ENV['JOURNAL_URL']}/papers/api_deposit",
+                :url => "http://neurolibre.herokuapp.com/papers/api_deposit",
+                verify_ssl: false,
                 :payload => {
                   :id => paper.review_issue_id,
                   :metadata => Base64.encode64(paper.deposit_payload.to_json),
@@ -149,6 +150,7 @@ module Whedon
                 })
 
       response = request.execute
+      puts response.body
       if response.code == 201
         puts "Deposit looks good."
       else
