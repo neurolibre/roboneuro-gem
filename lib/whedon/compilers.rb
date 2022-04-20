@@ -107,8 +107,6 @@ module Compilers
     latex_template_path = "#{Whedon.resources}/#{ENV['JOURNAL_ALIAS']}/latex.template"
     csl_file = "#{Whedon.resources}/#{ENV['JOURNAL_ALIAS']}/apa.csl"
 
-    puts "#{Whedon.resources}/#{ENV['JOURNAL_ALIAS']}/logo.png"
-    
     url = "#{ENV['JOURNAL_URL']}/papers/lookup/#{@review_issue_id}"
     response = RestClient.get(url)
     parsed = JSON.parse(response)

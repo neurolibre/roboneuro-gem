@@ -161,6 +161,7 @@ module Whedon
         puts "Depositing with Crossref..."
         request = RestClient::Request.new(
                   :method => :post,
+                  #:url => "https://test.crossref.org/servlet/deposit",
                   :url => "https://doi.crossref.org/servlet/deposit",
                   :payload => {
                     :multipart => true,
