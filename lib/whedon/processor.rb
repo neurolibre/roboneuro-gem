@@ -118,7 +118,7 @@ module Whedon
     end
 
     def deposit
-      #crossref_deposit
+      crossref_deposit
       joss_deposit
 
       puts "p=dat #{@review_issue_id};p.doi='#{paper.formatted_doi}';"\
@@ -173,6 +173,7 @@ module Whedon
                   })
 
         response = request.execute
+        puts response.body
         if response.code == 200
           puts "Deposit looks good. Check your email!"
         else

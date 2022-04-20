@@ -235,7 +235,7 @@ module Whedon
     end
 
     def pdf_url
-      "http://www.theoj.org/#{paper_repo}/#{joss_id}/#{ENV['DOI_PREFIX']}.#{joss_id}.pdf"
+      "http://neurolibre.org/#{paper_repo}/#{joss_id}/#{ENV['DOI_PREFIX']}.#{joss_id}.pdf"
     end
 
     def paper_org
