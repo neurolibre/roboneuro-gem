@@ -107,6 +107,8 @@ module Compilers
     latex_template_path = "#{Whedon.resources}/#{ENV['JOURNAL_ALIAS']}/latex.template"
     csl_file = "#{Whedon.resources}/#{ENV['JOURNAL_ALIAS']}/apa.csl"
 
+    puts "#{Whedon.resources}/#{ENV['JOURNAL_ALIAS']}/logo.png"
+    
     url = "#{ENV['JOURNAL_URL']}/papers/lookup/#{@review_issue_id}"
     response = RestClient.get(url)
     parsed = JSON.parse(response)
@@ -114,7 +116,7 @@ module Compilers
     published = parsed['accepted']
 
     # TODO - remove this once JOSE has their editors hooked up in the system
-    if ENV['JOURNAL_ALIAS'] == "joss" && !paper.editor.nil?
+    if ENV['JOURNAL_ALIAS'] == "neurolibre" && !paper.editor.nil?
       editor_lookup_url = "#{ENV['JOURNAL_URL']}/editors/lookup/#{paper.editor}"
       response = RestClient.get(editor_lookup_url)
       parsed = JSON.parse(response)
@@ -227,7 +229,7 @@ module Compilers
     -V paper_url=#{paper.pdf_url} \
     -V joss_resource_url=#{paper.joss_resource_url} \
     -V journal_alias=#{ENV['JOURNAL_ALIAS']} \
-    -V journal_abbrev_title=#{ENV['JOURNAL_ALIAS'].upcase} \
+    -V journal_abbrev_title=#{ENV['JOURNAL_ABBRV_TITLE']} \
     -V journal_url=#{ENV['JOURNAL_URL']} \
     -V journal_name='#{ENV['JOURNAL_NAME']}' \
     -V journal_issn=#{ENV['JOURNAL_ISSN']} \
@@ -297,7 +299,7 @@ module Compilers
       "paper_url" => paper.pdf_url,
       "joss_resource_url" => paper.joss_resource_url,
       "journal_alias" => ENV['JOURNAL_ALIAS'],
-      "journal_abbrev_title" => ENV['JOURNAL_ALIAS'].upcase,
+      "journal_abbrev_title" => ENV['JOURNAL_ABBRV_TITLE'],
       "journal_url" => ENV['JOURNAL_URL'],
       "journal_name" => ENV['JOURNAL_NAME'],
       "journal_issn"=> ENV['JOURNAL_ISSN'],

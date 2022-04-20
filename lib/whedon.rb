@@ -185,6 +185,7 @@ module Whedon
       payload['paper']['data_doi'] = review_issue_body[ARCHIVE_DATA_REGEX].gsub('"', '')
       payload['paper']['book_doi'] = review_issue_body[ARCHIVE_BOOK_REGEX].gsub('"', '')
       payload['paper']['docker_doi'] = review_issue_body[ARCHIVE_DOCKER_REGEX].gsub('"', '')
+      payload['paper']['book_exec_url'] = review_issue_body[BOOK_EXEC_REGEX].gsub('"', '')
       payload['paper']['repository_address'] = review_issue_body[REPO_REGEX].gsub('"', '')
       payload['paper']['editor'] = "@#{editor}"
       payload['paper']['reviewers'] = reviewers.collect(&:strip)
