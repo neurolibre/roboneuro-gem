@@ -234,8 +234,11 @@ module Whedon
       "#{ENV['JOURNAL_ALIAS']}.#{id}"
     end
 
+    # HARDCODED 
+    # We run into a problem with domain registration for neurolibre.github.io/preperints 
+    # Therefore we decided to add neurolibre.github.io/preprints to xml metadata.
     def pdf_url
-      "http://neurolibre.org/#{paper_repo}/#{joss_id}/#{ENV['DOI_PREFIX']}.#{joss_id}.pdf"
+      "https://neurolibre.github.io/#{paper_repo}/#{joss_id}/#{ENV['DOI_PREFIX']}.#{joss_id}.pdf"
     end
 
     def paper_org

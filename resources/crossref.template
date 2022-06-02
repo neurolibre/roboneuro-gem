@@ -77,7 +77,7 @@
           <resource>$joss_resource_url$</resource>
           <collection property="text-mining">
             <item>
-              <resource mime_type="application/pdf">$joss_resource_url$.pdf</resource>
+              <resource mime_type="application/pdf">$paper_url$</resource>
             </item>
           </collection>
         </doi_data>
