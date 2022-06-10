@@ -118,7 +118,9 @@ module Whedon
     end
 
     def deposit
+      puts "GEM - DEPOSITING CROSSREF"
       crossref_deposit
+      puts "GEM - DEPOSITING NEUROLIBRE"
       joss_deposit
 
       puts "p=dat #{@review_issue_id};p.doi='#{paper.formatted_doi}';"\
