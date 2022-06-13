@@ -132,7 +132,7 @@ module Whedon
     end
 
     def joss_deposit
-      puts "Depositing with JOSS..."
+      puts "Depositing with JOSS via http://neurolibre.org/papers/api_deposit"
       request = RestClient::Request.new(
                 :method => :post,
                 #:url => "http://neurolibre.herokuapp.com/papers/api_deposit",
