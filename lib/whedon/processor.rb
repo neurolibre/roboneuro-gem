@@ -132,13 +132,12 @@ module Whedon
     end
 
     def joss_deposit
-      puts "Depositing with JOSS via http://neurolibre.herokuapp.com/papers/api_deposit/"
+      puts "Depositing with JOSS via https://neurolibre.herokuapp.com/papers/api_deposit"
       puts "#{paper.deposit_payload.to_json}"
       request = RestClient::Request.new(
                 :method => :post,
-                :url => "http://neurolibre.herokuapp.com/papers/api_deposit/",
+                :url => "https://neurolibre.herokuapp.com/papers/api_deposit",
                 #:url => "http://neurolibre.org/papers/api_deposit",
-                verify_ssl: false,
                 :payload => {
                   :id => paper.review_issue_id,
                   :metadata => Base64.encode64(paper.deposit_payload.to_json),
