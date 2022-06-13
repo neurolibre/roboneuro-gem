@@ -118,9 +118,7 @@ module Whedon
     end
 
     def deposit
-      #puts "GEM - DEPOSITING CROSSREF"
-      #crossref_deposit
-      puts "GEM - DEPOSITING NEUROLIBRE"
+      crossref_deposit
       joss_deposit
 
       puts "p=dat #{@review_issue_id};p.doi='#{paper.formatted_doi}';"\
@@ -137,7 +135,6 @@ module Whedon
       request = RestClient::Request.new(
                 :method => :post,
                 :url => "https://neurolibre.herokuapp.com/papers/api_deposit",
-                #:url => "http://neurolibre.org/papers/api_deposit",
                 :payload => {
                   :id => paper.review_issue_id,
                   :metadata => Base64.encode64(paper.deposit_payload.to_json),
