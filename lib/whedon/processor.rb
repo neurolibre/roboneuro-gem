@@ -135,7 +135,8 @@ module Whedon
       puts "Depositing with JOSS..."
       request = RestClient::Request.new(
                 :method => :post,
-                :url => "http://neurolibre.herokuapp.com/papers/api_deposit",
+                #:url => "http://neurolibre.herokuapp.com/papers/api_deposit",
+                :url => "http://neurolibre.org/papers/api_deposit",
                 verify_ssl: false,
                 :payload => {
                   :id => paper.review_issue_id,
