@@ -235,7 +235,7 @@ module Whedon
     end
 
     # HARDCODED 
-    # We run into a problem with domain registration for neurolibre.github.io/preperints 
+    # We run into a problem with domain registration for neurolibre.github.io/preprints 
     # Therefore we decided to add neurolibre.github.io/preprints to xml metadata.
     def pdf_url
       "https://neurolibre.github.io/#{paper_repo}/#{joss_id}/#{ENV['DOI_PREFIX']}.#{joss_id}.pdf"
